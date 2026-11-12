@@ -20,13 +20,14 @@ Todos os pontos em aberto aparecem no site como etiquetas amarelas **[PREENCHER]
 - Busca: substituir `https://PREENCHER-URL-PORTAL-DE-RESULTADOS`, `…PORTAL-DO-MEDICO` e `…PORTAL-DO-DENTISTA` em todos os arquivos .html.
 
 ### Fotos (reais, nada de banco de imagens)
-O site está no ar com **ilustrações provisórias** (sala de ressonância, fachadas e avatares da equipe). Trocar pelas fotos abaixo assim que chegarem: basta substituir os arquivos em `img/` (ou o `src` das imagens) mantendo as proporções.
+O site usa **fotos geradas por IA no Figma** (aparelho de ressonância, sala de ultrassom, recepção), sem pessoas e com a etiqueta "Imagem ilustrativa" nos ambientes. Trocar pelas fotos reais abaixo assim que chegarem, mantendo as proporções: `img/foto-ressonancia.webp` (quadrada, fundo transparente), `img/foto-sala-ultrassom.webp` e `img/foto-recepcao.webp` (3:2).
 - [ ] Fachada da matriz (Av. Capitão Arlindo Pacheco, 115), de dia, de frente, letreiro legível, sem carros. Mínimo 1600 px de largura.
 - [ ] Aparelho de ressonância com um técnico da equipe (com termo de autorização de imagem).
 - [ ] Fachadas da unidade 108 e de Pesqueira (opcional nos cartões).
 - [ ] Imagem de compartilhamento 1200×630 px (`img/og-neuroimagem.jpg`).
 - [ ] Logo oficial em SVG.
 - [ ] Fotos do corpo clínico (opcional): quadradas, fundo neutro, mesmo enquadramento.
+- [ ] Atenção: a imagem da sala de ultrassom mostra um exame obstétrico no monitor. Se a clínica não faz ultrassom obstétrico, trocar essa imagem.
 
 ### Corpo clínico (exigência do CFM)
 - [ ] **Responsável técnico**: nome, CRM-PE e RQE (aparece na seção e no rodapé de todas as páginas).

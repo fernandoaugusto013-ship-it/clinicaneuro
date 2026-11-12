@@ -38,9 +38,13 @@
 
   /* ---------- Filtro de exames ---------- */
   var filterBtns = document.querySelectorAll("[data-filter]");
-  var exams = document.querySelectorAll("#exam-list .exam");
+  var exams = document.querySelectorAll("#exam-list .card");
   var status = document.getElementById("filter-status");
   var labels = { todas: "nas duas cidades", arcoverde: "em Arcoverde", pesqueira: "em Pesqueira" };
+  function applyFilter(f) {
+    var btn = document.querySelector('[data-filter="' + f + '"]');
+    if (btn) btn.click();
+  }
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function () {
       var f = btn.getAttribute("data-filter");
@@ -49,7 +53,6 @@
       exams.forEach(function (li) {
         var show = f === "todas" || li.getAttribute("data-units").split(" ").indexOf(f) > -1;
         li.hidden = !show;
-        li.querySelectorAll(".exam-units span").forEach(function (s) { s.hidden = f !== "todas"; });
         if (show) n++;
       });
       if (status) status.textContent = n + " exames " + labels[f] + ".";
@@ -69,7 +72,7 @@
     var esc = function (s) { return s.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
     var run = function () {
       var q = norm(input.value);
-      listItems.forEach(function (li) { li.style.background = ""; });
+      listItems.forEach(function (li) { li.classList.remove("is-hit"); });
       if (q.length < 2) {
         result.className = "plan-result";
         result.innerHTML = initial;
@@ -86,7 +89,7 @@
         result.className = "plan-result is-ok";
         result.innerHTML = "<strong>Sim, atendemos " + esc(hit.nome) + ".</strong>" +
           "<p>A cobertura de cada exame depende do seu plano. Para confirmar o seu, mande a foto do pedido e da carteirinha pelo WhatsApp.</p>";
-        listItems.forEach(function (li) { if (norm(li.textContent) === norm(hit.nome)) li.style.background = "#E3EFE6"; });
+        listItems.forEach(function (li) { if (norm(li.textContent) === norm(hit.nome)) li.classList.add("is-hit"); });
       } else {
         result.className = "plan-result is-miss";
         result.innerHTML = "<strong>Não encontramos “" + esc(input.value.trim()) + "” na nossa lista.</strong>" +
@@ -180,24 +183,66 @@
     }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
     targets.forEach(function (t) { io.observe(t); });
 
-    var hero = document.querySelector(".hero");
-    if (hero) {
-      var ticking = false;
-      window.addEventListener("scroll", function () {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(function () {
-          var y = Math.min(window.scrollY, 900);
-          hero.style.setProperty("--parallax", (y * 0.18).toFixed(1) + "px");
-          ticking = false;
-        });
-      }, { passive: true });
-    }
   }
   /* Itens que o filtro mostra de novo continuam visíveis */
   document.querySelectorAll("[data-filter]").forEach(function (b) {
     b.addEventListener("click", function () { var l = document.getElementById("exam-list"); if (l) l.classList.add("is-in"); });
   });
+
+  /* ---------- Busca do hero: filtra e leva ao exame ---------- */
+  var finder = document.getElementById("finder");
+  if (finder) {
+    finder.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var exam = document.getElementById("finder-exam").value;
+      var city = document.getElementById("finder-city").value;
+      applyFilter(city);
+      var list = document.getElementById("exam-list");
+      if (list) list.classList.add("is-in", "settled");
+      var target = exam ? document.getElementById("ex-" + exam) : document.getElementById("exames");
+      if (exam && target && target.hidden) {
+        applyFilter("todas");
+        var st = document.getElementById("filter-status");
+        if (st) st.textContent = "Este exame não é feito em " + (city === "pesqueira" ? "Pesqueira" : "Arcoverde") + ". Veja onde ele é feito.";
+      }
+      if (target) {
+        target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: exam ? "center" : "start" });
+        if (exam) {
+          var sum = target.querySelector("summary");
+          setTimeout(function () { (sum || target).focus({ preventScroll: true }); }, reduce ? 0 : 600);
+        }
+      }
+    });
+  }
+
+  /* ---------- Header muda ao rolar ---------- */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 10); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ---------- Números da faixa azul contam ao aparecer ---------- */
+  var counters = document.querySelectorAll("[data-count]");
+  if (!reduce && "IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, end = parseInt(el.getAttribute("data-count"), 10);
+        var start = el.hasAttribute("data-plain") ? end - 22 : 0, t0 = null, dur = 1400;
+        var step = function (t) {
+          if (!t0) t0 = t;
+          var p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(start + (end - start) * eased);
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { cio.observe(c); });
+  }
 
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
