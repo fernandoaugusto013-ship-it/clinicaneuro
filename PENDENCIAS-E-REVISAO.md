@@ -69,8 +69,9 @@ O site usa **fotos geradas por IA no Figma** (aparelho de ressonância, sala de 
 - Horários do Google usados nos cartões das unidades (seg. a sex., 7h às 17h; Pesqueira também sáb., 8h às 11h), marcados como [CONFIRMAR]. O Instagram da clínica diz que as unidades abrem aos sábados.
 
 ### Foto do Dr. Rodrigo Roa no banner
-- [ ] Autorização do Dr. Rodrigo para uma foto dele gerada/editada por IA (ou uma sessão de fotos real de jaleco, braços cruzados).
-- [ ] Para gerar no Figma: ligar a conta do Figma ao Weave (app.weavy.ai → configurações do perfil) e aprovar o custo em créditos.
+- Foto gerada por IA no Canva a partir de foto real dele, com fundo removido (`img/dr-rodrigo-roa.webp`). O site foi pedido pelo próprio Dr. Rodrigo e só será publicado com a autorização dele.
+- [ ] Dr. Rodrigo conferir se a foto está fiel ao rosto dele antes de publicar.
+- [ ] **Especialidade, CRM-PE e RQE** do Dr. Rodrigo (aparecem na etiqueta ao lado da foto; o CFM pede esses dados junto da imagem do médico).
 
 ## 2. Revisão final (web-review + anti-slop) — o que foi corrigido
 

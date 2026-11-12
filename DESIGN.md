@@ -46,8 +46,9 @@
 
 ## Imagens
 
-- Fotos **geradas por IA no Figma** (arquivo "Neuro Imagem — imagens do site"): aparelho de ressonância (hero, fundo removido), sala de ultrassom e recepção.
-- Sem pessoas, para não sugerir que são médicos ou pacientes da clínica. As fotos de ambientes levam a etiqueta "Imagem ilustrativa".
+- **Hero:** foto do Dr. Rodrigo Roa (gerada por IA no Canva a partir de foto real, com autorização dele), fundo removido, sobre o semicírculo `--blue-100`, com duas etiquetas flutuantes (nota do Google e nome/CRM do médico), como os cartões da referência.
+- Fotos de ambientes **geradas por IA no Figma** (arquivo "Neuro Imagem — imagens do site"): sala de ultrassom e recepção.
+- As fotos de ambientes não têm pessoas, para não sugerir que são pacientes da clínica. As fotos de ambientes levam a etiqueta "Imagem ilustrativa".
 - Trocar por fotos reais da clínica quando chegarem (mesmas proporções).
 - Ícones: traço próprio em SVG, azul, dentro de círculos `--blue-50`.
 
