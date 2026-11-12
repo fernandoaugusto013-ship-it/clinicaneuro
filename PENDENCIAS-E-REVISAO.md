@@ -20,7 +20,7 @@ Todos os pontos em aberto aparecem no site como etiquetas amarelas **[PREENCHER]
 - Busca: substituir `https://PREENCHER-URL-PORTAL-DE-RESULTADOS`, `…PORTAL-DO-MEDICO` e `…PORTAL-DO-DENTISTA` em todos os arquivos .html.
 
 ### Fotos (reais, nada de banco de imagens)
-O site usa **fotos geradas por IA no Figma** (aparelho de ressonância, sala de ultrassom, recepção), sem pessoas e com a etiqueta "Imagem ilustrativa" nos ambientes. Trocar pelas fotos reais abaixo assim que chegarem, mantendo as proporções: `img/foto-ressonancia.webp` (quadrada, fundo transparente), `img/foto-sala-ultrassom.webp` e `img/foto-recepcao.webp` (3:2).
+O site usa **fotos de ambientes geradas por IA no Figma** (sala de ultrassom e recepção), sem pessoas e com a etiqueta "Imagem ilustrativa". Trocar pelas fotos reais abaixo assim que chegarem, mantendo a proporção 3:2: `img/foto-sala-ultrassom.webp` e `img/foto-recepcao.webp`.
 - [ ] Fachada da matriz (Av. Capitão Arlindo Pacheco, 115), de dia, de frente, letreiro legível, sem carros. Mínimo 1600 px de largura.
 - [ ] Aparelho de ressonância com um técnico da equipe (com termo de autorização de imagem).
 - [ ] Fachadas da unidade 108 e de Pesqueira (opcional nos cartões).
@@ -93,7 +93,7 @@ Testado no navegador em 375 px, 390 px, 768 px, 820 px e 1440 px, só com teclad
 
 **Verificado e aprovado**
 - Hero diz o que é, onde fica e como agir; 1 ação principal (WhatsApp) + 1 secundária (resultado).
-- Visual segue a referência escolhida (cartões com ícone em círculo, pílulas, faixa azul), mas sem números, depoimentos ou médicos inventados.
+- Visual segue a referência escolhida (cartões com ícone em círculo, pílulas, faixa azul), com números e elogios reais do Google e a foto do próprio Dr. Rodrigo.
 - Busca do hero leva ao exame certo e avisa quando ele não é feito na cidade escolhida.
 - Teclado: "Pular para o conteúdo" é o 1º foco; ordem lógica; foco visível em tudo; Esc fecha o menu.
 - Formulário: rótulos visíveis, mensagens de erro em texto, foco vai para o 1º campo com erro.
