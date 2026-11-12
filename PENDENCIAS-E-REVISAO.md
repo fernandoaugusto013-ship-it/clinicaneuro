@@ -61,6 +61,17 @@ O site usa **fotos geradas por IA no Figma** (aparelho de ressonância, sala de 
 ### Medicina do Trabalho
 - [ ] Serviços oferecidos (ASO admissional/periódico/demissional, PCMSO etc.), exames complementares, como a empresa contrata, prazo do ASO.
 
+### Avaliações do Google (nota e 10 elogios no site)
+- Nota e números copiados do Google em **12/11/2026**: Arcoverde 4,7 (2.112 avaliações; 1.816 de 5 estrelas = 86%). Pesqueira tem 4,1 com 23 avaliações e não aparece na faixa. **Atualizar a cada 3 meses** em `index.html` (seção "NOTA NO GOOGLE").
+- Os 10 elogios foram copiados como estão no Google (com os erros de digitação originais), com nome abreviado (primeiro nome + inicial) e só mês/ano.
+- **CFM (Res. 2.336/2023):** repostar elogios é permitido, desde que sejam sóbrios, sem promessa de resultado e não de forma reiterada. Escolhemos textos curtos e sem promessas, mas alguns usam "excelente" e "ótima". Vale a validação do responsável técnico ou do jurídico antes de publicar.
+- [ ] Confirmar que os funcionários citados (Dr. Rodrigo, Maria Vitória) concordam em aparecer nos elogios.
+- Horários do Google usados nos cartões das unidades (seg. a sex., 7h às 17h; Pesqueira também sáb., 8h às 11h), marcados como [CONFIRMAR]. O Instagram da clínica diz que as unidades abrem aos sábados.
+
+### Foto do Dr. Rodrigo Roa no banner
+- [ ] Autorização do Dr. Rodrigo para uma foto dele gerada/editada por IA (ou uma sessão de fotos real de jaleco, braços cruzados).
+- [ ] Para gerar no Figma: ligar a conta do Figma ao Weave (app.weavy.ai → configurações do perfil) e aprovar o custo em créditos.
+
 ## 2. Revisão final (web-review + anti-slop) — o que foi corrigido
 
 Testado no navegador em 375 px, 390 px, 768 px, 820 px e 1440 px, só com teclado e com as interações reais (filtro, busca de convênio, formulário, menu, cookies). O site não tem modo escuro (decisão do DESIGN.md).

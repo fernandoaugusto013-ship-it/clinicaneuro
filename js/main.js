@@ -164,11 +164,11 @@
 
   /* ---------- Animações ao rolar ---------- */
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var targets = document.querySelectorAll(".reveal, .reveal-stagger, .timeline");
+  var targets = document.querySelectorAll(".reveal, .reveal-stagger, .timeline, .rating-card");
   document.querySelectorAll(".reveal-stagger").forEach(function (g) {
     Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty("--i", Math.min(i, 10)); });
   });
-  if (reduce || !("IntersectionObserver" in window)) {
+  if (!("IntersectionObserver" in window)) {
     targets.forEach(function (t) { t.classList.add("is-in"); });
   } else {
     var io = new IntersectionObserver(function (entries) {
@@ -215,6 +215,23 @@
     });
   }
 
+  /* ---------- Barra de progresso e parallax do hero ---------- */
+  var heroMedia = document.querySelector(".hero-media");
+  var ticking2 = false;
+  var onFrame = function () {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    h.style.setProperty("--progress", max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+    if (heroMedia && !reduce && window.innerWidth >= 960 && window.scrollY < 1200) {
+      heroMedia.style.setProperty("--hero-y", (window.scrollY * 0.22).toFixed(1) + "px");
+    }
+    ticking2 = false;
+  };
+  window.addEventListener("scroll", function () {
+    if (!ticking2) { ticking2 = true; requestAnimationFrame(onFrame); }
+  }, { passive: true });
+  onFrame();
+
   /* ---------- Header muda ao rolar ---------- */
   var header = document.querySelector(".site-header");
   if (header) {
@@ -224,17 +241,20 @@
   }
 
   /* ---------- Números da faixa azul contam ao aparecer ---------- */
-  var counters = document.querySelectorAll("[data-count]");
+  var counters = document.querySelectorAll("[data-count], [data-count-dec]");
   if (!reduce && "IntersectionObserver" in window) {
     var cio = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
-        var el = e.target, end = parseInt(el.getAttribute("data-count"), 10);
-        var start = el.hasAttribute("data-plain") ? end - 22 : 0, t0 = null, dur = 1400;
+        var el = e.target, dec = el.hasAttribute("data-count-dec");
+        var end = dec ? parseFloat(el.getAttribute("data-count-dec")) : parseInt(el.getAttribute("data-count"), 10);
+        var start = el.hasAttribute("data-plain") ? end - 22 : 0, t0 = null, dur = 1600;
+        var plain = el.hasAttribute("data-plain");
+        var fmt = function (v) { return dec ? v.toFixed(1).replace(".", ",") : plain ? String(Math.round(v)) : Math.round(v).toLocaleString("pt-BR"); };
         var step = function (t) {
           if (!t0) t0 = t;
           var p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(start + (end - start) * eased);
+          el.textContent = fmt(start + (end - start) * eased);
           if (p < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);

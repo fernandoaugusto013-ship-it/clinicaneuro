@@ -143,6 +143,7 @@
   <symbol id="x-bio" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M30 6l12 12M33 9L15 27l6 6 18-18M18 30l-8 8M10 38l-4 4M24 18l3 3M20 22l3 3"/></symbol>
 </svg>
 
+<div class="scroll-progress" aria-hidden="true"></div>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="site-header" id="topo">
@@ -217,6 +218,26 @@
       <div class="hero-media">
         <!-- Imagem gerada por IA (provisória). Trocar por foto real do equipamento da clínica. -->
         <img src="img/foto-ressonancia.webp" width="1024" height="1024" alt="Aparelho de ressonância magnética com a mesa do paciente." fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTA NO GOOGLE (dados de 12/11/2026 — atualizar periodicamente) -->
+  <section class="rating-bar" aria-labelledby="rating-title">
+    <div class="wrap">
+      <div class="rating-card reveal" data-reveal="zoom">
+        <div class="rating-score">
+          <h2 id="rating-title" class="visually-hidden">Nota no Google</h2>
+          <span class="score tnum" data-count-dec="4.7">4,7</span>
+          <span class="stars" role="img" aria-label="4,7 de 5 estrelas"><span style="--fill:94%"></span></span>
+          <span class="score-sub">no Google · Unidade Arcoverde</span>
+        </div>
+        <ul class="rating-facts">
+          <li><strong class="tnum" data-count="2112">2.112</strong> avaliações de pacientes</li>
+          <li><strong class="tnum"><span data-count="86">86</span>%</strong> deram 5 estrelas</li>
+          <li><strong class="tnum" data-count="1816">1.816</strong> avaliações nota máxima</li>
+        </ul>
+        <a class="btn btn-secondary" href="https://www.google.com/maps/place/?q=place_id:ChIJ7TrelukbqAcRYla_UNpkpZ8" target="_blank" rel="noopener">Ver no Google<span class="visually-hidden"> (abre em nova aba)</span></a>
       </div>
     </div>
   </section>
@@ -448,7 +469,7 @@
           <dl>
             <div><dt>Endereço</dt><dd>Av. Capitão Arlindo Pacheco, 115, Centro, Arcoverde–PE. Em frente à Prefeitura.</dd></div>
             <div><dt>Telefone</dt><dd><a class="tnum" href="tel:+558733211111">(87) 3321-1111</a></dd></div>
-            <div><dt>Horário</dt><dd><span class="fill">[PREENCHER: dias e horários]</span></dd></div>
+            <div><dt>Horário</dt><dd>Seg. a sex., 7h às 17h <span class="fill">[CONFIRMAR: horário do Google; sábados?]</span></dd></div>
           </dl>
           <div class="what"><p><strong>O que é feito aqui:</strong> <span class="fill">[PREENCHER: exames e consultas desta unidade]</span></p></div>
           <div class="unit-actions">
@@ -461,7 +482,7 @@
           <dl>
             <div><dt>Endereço</dt><dd>Av. Capitão Arlindo Pacheco, 108, Centro, Arcoverde–PE.</dd></div>
             <div><dt>Telefone</dt><dd><a class="tnum" href="tel:+558733211111">(87) 3321-1111</a></dd></div>
-            <div><dt>Horário</dt><dd><span class="fill">[PREENCHER: dias e horários]</span></dd></div>
+            <div><dt>Horário</dt><dd>Seg. a sex., 7h às 17h <span class="fill">[CONFIRMAR: horário do Google; sábados?]</span></dd></div>
           </dl>
           <div class="what"><p><strong>O que é feito aqui:</strong> <span class="fill">[PREENCHER: exames e consultas desta unidade]</span></p></div>
           <div class="unit-actions">
@@ -474,7 +495,7 @@
           <dl>
             <div><dt>Endereço</dt><dd>Rua Vigário Espinosa, 180, São Sebastião, Pesqueira–PE.</dd></div>
             <div><dt>Telefone</dt><dd><span class="fill">[CONFIRMAR: (87) 3321-1111 ou (87) 3835-2848]</span></dd></div>
-            <div><dt>Horário</dt><dd><span class="fill">[PREENCHER: dias e horários]</span></dd></div>
+            <div><dt>Horário</dt><dd>Seg. a sex., 7h às 17h · sáb., 8h às 11h <span class="fill">[CONFIRMAR: horário do Google]</span></dd></div>
           </dl>
           <div class="what"><p><strong>O que é feito aqui:</strong> mamografia, ultrassom, exames contrastados, raio X, densitometria óssea, punção/biópsia e consultas de ortopedia.</p></div>
           <div class="unit-actions">
@@ -627,6 +648,71 @@
           <div class="answer"><p><span class="fill">[CONFIRMAR]</span> Documento com foto, o pedido médico, a carteirinha do convênio ou o Cartão do SUS, e exames anteriores da mesma região do corpo, se tiver.</p></div>
         </details>
       </div>
+    </div>
+  </section>
+
+  <!-- ELOGIOS DO GOOGLE (texto original, sem edição; nomes abreviados) -->
+  <section class="section section-tint" id="avaliacoes" aria-labelledby="avaliacoes-title">
+    <div class="wrap">
+      <div class="section-head-row reveal">
+        <div class="section-head">
+          <h2 id="avaliacoes-title">O que os pacientes dizem <span class="hl">no Google</span></h2>
+          <p>Avaliações de 5 estrelas publicadas no Google da unidade de Arcoverde, reproduzidas como foram escritas.</p>
+        </div>
+        <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJ7TrelukbqAcRYla_UNpkpZ8" target="_blank" rel="noopener">Ver todas as 2.112 avaliações <svg aria-hidden="true"><use href="#i-arrow"/></svg><span class="visually-hidden"> (abre em nova aba)</span></a>
+      </div>
+      <ul class="reviews reveal-stagger">
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Atendimento com o Dr. Rodrigo excelente, sorriso no rosto, atencioso, esclarece todo o diagnóstico.</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">A</span><span><strong>Alexandre T.</strong><br><small>Avaliação no Google · abr. 2026</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Ótima , atendimento rápido , nos tira todas as dúvidas que tiver .</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">L</span><span><strong>Luana R.</strong><br><small>Avaliação no Google · 2025</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Incrível, atendente Maria Vitória super solicita. 🤍</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">S</span><span><strong>Sabrina L.</strong><br><small>Avaliação no Google · jun. 2026</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Achei muito ótimo o atendimento não fiquei muito tempo esperando pra ser respondida</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">M</span><span><strong>Maria Lucilena M.</strong><br><small>Avaliação no Google · 2025</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Muito boa ! Pessoal muito competente. Eu recomendo.</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">E</span><span><strong>Emanoel C.</strong><br><small>Avaliação no Google · jun. 2026</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Muito satisfeita com atendimento,e todo o grupo de prestadores</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">R</span><span><strong>Regina F.</strong><br><small>Avaliação no Google · 2025</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Ótima. Já sou cliente a muitos anos</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">M</span><span><strong>Mirian I.</strong><br><small>Avaliação no Google · jun. 2026</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Experiência ótima fui bem atendida nota 10 estão de parabéns</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">J</span><span><strong>Jaelza B.</strong><br><small>Avaliação no Google · 2025</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Um ótimo atendimento, simples e prático.</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">M</span><span><strong>Maria Isadora A.</strong><br><small>Avaliação no Google · out. 2026</small></span></p>
+        </li>
+        <li class="review">
+          <span class="stars" role="img" aria-label="5 de 5 estrelas"><span style="--fill:100%"></span></span>
+          <blockquote><p>Atendimento excelente..muito atenciosos.</p></blockquote>
+          <p class="review-by"><span class="avatar-ini" aria-hidden="true">B</span><span><strong>Brígida M.</strong><br><small>Avaliação no Google · 2025</small></span></p>
+        </li>
+      </ul>
     </div>
   </section>
 
