@@ -76,11 +76,13 @@ Testado no navegador em 375 px, 390 px, 768 px, 820 px e 1440 px, só com teclad
 8. **Texto de consultas** dizia "médicos de dez especialidades e nutricionista", mas são 9 especialidades médicas + nutrição. Corrigido para "dez áreas".
 9. **Busca de convênio:** removi apelidos que poderiam dar falso "aceito" (NotreDame/GNDI para Hapvida; "Caixa" para CAPESAÚDE).
 10. **Estilos soltos no HTML** viraram classes do CSS.
-11. **Contraste:** todas as combinações de cor medidas passam AA. A menor é 4,97:1 (etiqueta de aviso).
+11. **Contraste:** todas as combinações de cor medidas passam AA. A menor é 4,86:1 (azul sobre o fundo azul-claro).
+12. **Novo visual (referência Figma):** os textos "Arcoverde e Pesqueira" quebravam em três linhas nos cartões (conflito de classe CSS); a foto da ressonância mostrava uma borda retangular sobre o semicírculo (fundo removido); nomes de especialidades vazavam das pílulas; o header passava da tela em celulares de 375 px. Tudo corrigido.
 
 **Verificado e aprovado**
 - Hero diz o que é, onde fica e como agir; 1 ação principal (WhatsApp) + 1 secundária (resultado).
-- Sem gradientes, blobs, ícones em círculos, emojis ou cartões repetidos. Só as 3 unidades usam cartão.
+- Visual segue a referência escolhida (cartões com ícone em círculo, pílulas, faixa azul), mas sem números, depoimentos ou médicos inventados.
+- Busca do hero leva ao exame certo e avisa quando ele não é feito na cidade escolhida.
 - Teclado: "Pular para o conteúdo" é o 1º foco; ordem lógica; foco visível em tudo; Esc fecha o menu.
 - Formulário: rótulos visíveis, mensagens de erro em texto, foco vai para o 1º campo com erro.
 - Títulos em ordem (h1 → h2 → h3), landmarks (header, nav, main, footer), `lang="pt-BR"`.
@@ -90,5 +92,5 @@ Testado no navegador em 375 px, 390 px, 768 px, 820 px e 1440 px, só com teclad
 - Sem preços, sem "o melhor", sem promessa de resultado.
 
 **Fica para a clínica decidir**
-- A fonte do corpo (Atkinson Hyperlegible Next) mostra o zero cortado (Ø). É de propósito: ajuda pessoas com baixa visão a não confundir 0 com O. Se incomodar em CNPJ e anos, dá para trocar por outra fonte legível.
+- A referência usa texto de 16 px; o site usa 18 px por causa dos pacientes idosos.
 - O formulário não guarda dados em servidor: ele abre o WhatsApp com a mensagem pronta. Se quiserem receber por e-mail, é preciso ligar um serviço de formulários.
