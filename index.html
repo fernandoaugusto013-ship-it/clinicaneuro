@@ -20,6 +20,7 @@
 
 <link rel="preload" href="fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/literata.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
@@ -168,9 +169,9 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div>
-        <h1 id="hero-title">Ressonância, tomografia e mamografia <em>aqui no Sertão</em>, sem precisar viajar.</h1>
-        <p class="lead">Exames de imagem e consultas em Arcoverde e Pesqueira. Atendemos pelo SUS e por convênios. Para marcar, é só mandar uma mensagem.</p>
-        <div class="hero-ctas">
+        <h1 id="hero-title" class="intro" style="--d:0ms">Ressonância, tomografia e mamografia <em>aqui no Sertão</em>, sem precisar viajar.</h1>
+        <p class="lead intro" style="--d:120ms">Exames de imagem e consultas em Arcoverde e Pesqueira. Atendemos pelo SUS e por convênios. Para marcar, é só mandar uma mensagem.</p>
+        <div class="hero-ctas intro" style="--d:220ms">
           <a class="btn btn-primary btn-lg js-wa" href="#contato" data-msg="Olá, gostaria de agendar um exame de ___">
             <svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar exame pelo WhatsApp
           </a>
@@ -178,11 +179,11 @@
             <svg aria-hidden="true"><use href="#i-result"/></svg>Ver meu resultado
           </a>
         </div>
-        <p class="hero-note"><svg aria-hidden="true"><use href="#i-check"/></svg><span>SUS, Unimed, Amil, Hapvida e mais 10 convênios. <a href="#convenios">Confira o seu</a>.</span></p>
+        <p class="hero-note intro" style="--d:320ms"><svg aria-hidden="true"><use href="#i-check"/></svg><span>SUS, Unimed, Amil, Hapvida e mais 10 convênios. <a href="#convenios">Confira o seu</a>.</span></p>
       </div>
-      <figure class="photo-slot">
-        <span class="tag">Foto necessária</span>
-        <figcaption><strong>Fachada da matriz, Av. Capitão Arlindo Pacheco, 115</strong>De dia, de frente, com o letreiro legível e sem carros na frente. Alternativa: o aparelho de ressonância com um técnico da equipe (com autorização de imagem).</figcaption>
+      <figure class="hero-media reveal" data-reveal="right">
+        <!-- Ilustração provisória: trocar por foto real da clínica (ver PENDENCIAS-E-REVISAO.md) -->
+        <img src="img/ilustracao-ressonancia.svg" width="800" height="1000" alt="Ilustração de uma sala de ressonância magnética, com o aparelho, a mesa do paciente e uma janela com vista para o Sertão." fetchpriority="high">
       </figure>
     </div>
   </section>
@@ -202,7 +203,7 @@
   <!-- EXAMES -->
   <section class="section" id="exames" aria-labelledby="exames-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="ruler"><span class="n">01</span> Exames</p>
         <h2 id="exames-title">Veja se fazemos o seu exame</h2>
         <p class="lead">Escolha a cidade para ver só o que é feito lá. Em cada exame, toque em “Como me preparar?” para saber o que fazer antes.</p>
@@ -219,7 +220,7 @@
           <p>Não achou o seu exame? <a class="js-wa" href="#contato" data-msg="Olá, vocês fazem o exame de ___?">Pergunte pelo WhatsApp</a>.</p>
         </div>
 
-        <ul class="exam-list" id="exam-list">
+        <ul class="exam-list reveal-stagger" id="exam-list">
           <li class="exam" data-units="arcoverde">
             <div>
               <h3>Ressonância Magnética</h3>
@@ -332,7 +333,7 @@
       </div>
       <div>
         <h3 class="visually-hidden">Lista completa de convênios</h3>
-        <ul class="plan-list" id="plan-list">
+        <ul class="plan-list reveal-stagger" id="plan-list">
           <li class="sus">SUS</li>
           <li>Unimed</li>
           <li>Amil</li>
@@ -356,13 +357,13 @@
   <!-- UNIDADES -->
   <section class="section" id="unidades" aria-labelledby="unidades-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="ruler"><span class="n">03</span> Unidades</p>
         <h2 id="unidades-title">Duas cidades, três endereços</h2>
         <p class="lead">Em Arcoverde, as duas unidades ficam na mesma avenida, a poucos passos uma da outra. Confira para qual delas o seu exame foi marcado.</p>
       </div>
 
-      <div class="street-note">
+      <div class="street-note reveal">
         <svg class="street-diagram" viewBox="0 0 360 120" role="img" aria-labelledby="street-t">
           <title id="street-t">Esquema: as unidades 115 e 108 ficam na mesma avenida, a Capitão Arlindo Pacheco, no Centro de Arcoverde. A 115 fica em frente à Prefeitura.</title>
           <rect x="0" y="48" width="360" height="26" fill="#EFE6D8"/>
@@ -378,8 +379,9 @@
         <p><strong>115</strong> é a matriz, em frente à Prefeitura. <strong>108</strong> é o Centro de Diagnóstico. Antes de sair de casa, confira na sua marcação qual é o número. <small class="muted">(Esquema ilustrativo, sem escala. <span class="fill">[CONFIRMAR posição dos prédios]</span>)</small></p>
       </div>
 
-      <div class="units">
+      <div class="units reveal-stagger">
         <article class="unit" aria-labelledby="u1">
+          <img class="unit-img" src="img/ilustracao-unidade-115.svg" width="800" height="500" alt="Ilustração da fachada da unidade 115, com a placa Neuro Imagem." loading="lazy" decoding="async">
           <div class="unit-num"><small>Arcoverde · matriz</small>115</div>
           <div>
             <h3 id="u1">Neuro Imagem Arcoverde</h3>
@@ -397,6 +399,7 @@
         </article>
 
         <article class="unit" aria-labelledby="u2">
+          <img class="unit-img" src="img/ilustracao-unidade-108.svg" width="800" height="500" alt="Ilustração da fachada do Centro de Diagnóstico, número 108." loading="lazy" decoding="async">
           <div class="unit-num"><small>Arcoverde · mesma avenida</small>108</div>
           <div>
             <h3 id="u2">Centro de Diagnóstico de Arcoverde</h3>
@@ -414,6 +417,7 @@
         </article>
 
         <article class="unit" aria-labelledby="u3">
+          <img class="unit-img" src="img/ilustracao-unidade-pesqueira.svg" width="800" height="500" alt="Ilustração da fachada da unidade de Pesqueira." loading="lazy" decoding="async">
           <div class="unit-num"><small>Pesqueira</small>180</div>
           <div>
             <h3 id="u3">Neuro Imagem Pesqueira</h3>
@@ -442,7 +446,7 @@
         <p>Além dos exames, você pode marcar consulta em dez áreas em Arcoverde. Em Pesqueira, atendemos ortopedia.</p>
         <a class="btn btn-primary js-wa" href="#contato" data-msg="Olá, gostaria de marcar uma consulta de ___"><svg aria-hidden="true"><use href="#i-wa"/></svg>Marcar consulta</a>
       </div>
-      <ul class="spec-list">
+      <ul class="spec-list reveal-stagger">
         <li>Neurologia<small>Arcoverde</small></li>
         <li>Ortopedia<small>Arcoverde e Pesqueira</small></li>
         <li>Cardiologia<small>Arcoverde</small></li>
@@ -465,13 +469,13 @@
         <h2 id="sobre-title">Começamos em Arcoverde em 2004. Continuamos aqui.</h2>
         <p class="lead">A Neuro Imagem nasceu para que quem mora no Sertão pudesse fazer exames de imagem perto de casa, sem pegar a estrada até Recife ou Caruaru.</p>
         <p>Começamos com diagnóstico por imagem, medicina do trabalho e neurologia. Depois veio o centro de ressonância magnética, em parceria com o Dr. Boris Berenstein, e a unidade de Pesqueira.</p>
-        <div class="mv">
+        <div class="mv reveal">
           <div><h3>Missão</h3><p>Cuidar das pessoas com um diagnóstico preciso e bem feito.</p></div>
           <div><h3>Visão</h3><p>Ser referência em diagnóstico no Sertão nordestino.</p></div>
         </div>
         <p class="values"><strong>O que guia o nosso trabalho:</strong> organização, eficiência, respeito, humildade, inovação, conhecimento, compromisso e trabalho coletivo.</p>
       </div>
-      <ol class="timeline" aria-label="Linha do tempo">
+      <ol class="timeline reveal-stagger" aria-label="Linha do tempo">
         <li><span class="year">2004</span><div><h3>Abertura em Arcoverde</h3><p>Diagnóstico por imagem, medicina do trabalho e clínica neurológica.</p></div></li>
         <li><span class="year"><span class="fill">[ano]</span></span><div><h3>Centro de ressonância magnética</h3><p>Em parceria com o Dr. Boris Berenstein. A ressonância passa a ser feita em Arcoverde.</p></div></li>
         <li><span class="year"><span class="fill">[ano]</span></span><div><h3>Unidade de Pesqueira</h3><p>Exames de imagem e ortopedia na Rua Vigário Espinosa.</p></div></li>
@@ -483,19 +487,19 @@
   <!-- CORPO CLÍNICO -->
   <section class="section section-alt" id="corpo-clinico" aria-labelledby="equipe-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="ruler"><span class="n">06</span> Corpo clínico</p>
         <h2 id="equipe-title">Quem cuida do seu exame</h2>
         <p>Médicos e profissionais de saúde que atendem nas nossas unidades.</p>
       </div>
-      <ul class="team">
-        <!-- [PREENCHER] Repetir um <li> por profissional. Foto opcional (quadrada, 160×160, fundo neutro). -->
-        <li><div class="avatar" aria-hidden="true">Foto</div><div><h3><span class="fill">[Nome]</span></h3><p>Radiologia e diagnóstico por imagem</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
-        <li><div class="avatar" aria-hidden="true">Foto</div><div><h3><span class="fill">[Nome]</span></h3><p>Neurologia</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
-        <li><div class="avatar" aria-hidden="true">Foto</div><div><h3><span class="fill">[Nome]</span></h3><p>Ortopedia</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
-        <li><div class="avatar" aria-hidden="true">Foto</div><div><h3><span class="fill">[Nome]</span></h3><p>Medicina do Trabalho</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
-        <li><div class="avatar" aria-hidden="true">Foto</div><div><h3><span class="fill">[Nome]</span></h3><p>Nutrição</p><p class="tnum">CRN-6 <span class="fill">[nº]</span></p></div></li>
-        <li><div class="avatar" aria-hidden="true">Foto</div><div><h3><span class="fill">[Nome]</span></h3><p><span class="fill">[Especialidade]</span></p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
+      <ul class="team reveal-stagger">
+        <!-- [PREENCHER] Repetir um <li> por profissional. Avatares são ilustrações provisórias: trocar por fotos reais (quadradas, 160×160, fundo neutro). -->
+        <li><img class="avatar" src="img/avatar-1.svg" width="160" height="160" alt="" loading="lazy" decoding="async"><div><h3><span class="fill">[Nome]</span></h3><p>Radiologia e diagnóstico por imagem</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
+        <li><img class="avatar" src="img/avatar-2.svg" width="160" height="160" alt="" loading="lazy" decoding="async"><div><h3><span class="fill">[Nome]</span></h3><p>Neurologia</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
+        <li><img class="avatar" src="img/avatar-3.svg" width="160" height="160" alt="" loading="lazy" decoding="async"><div><h3><span class="fill">[Nome]</span></h3><p>Ortopedia</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
+        <li><img class="avatar" src="img/avatar-4.svg" width="160" height="160" alt="" loading="lazy" decoding="async"><div><h3><span class="fill">[Nome]</span></h3><p>Medicina do Trabalho</p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
+        <li><img class="avatar" src="img/avatar-5.svg" width="160" height="160" alt="" loading="lazy" decoding="async"><div><h3><span class="fill">[Nome]</span></h3><p>Nutrição</p><p class="tnum">CRN-6 <span class="fill">[nº]</span></p></div></li>
+        <li><img class="avatar" src="img/avatar-6.svg" width="160" height="160" alt="" loading="lazy" decoding="async"><div><h3><span class="fill">[Nome]</span></h3><p><span class="fill">[Especialidade]</span></p><p class="tnum">CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p></div></li>
       </ul>
       <div class="rt-box">
         <p><strong>Responsável técnico:</strong> <span class="fill">[PREENCHER: Dr(a). Nome]</span> — CRM-PE <span class="fill">[nº]</span> · RQE <span class="fill">[nº]</span></p>
@@ -506,11 +510,11 @@
   <!-- MÉDICOS E EMPRESAS -->
   <section class="section" id="medicos-empresas" aria-labelledby="pro-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="ruler"><span class="n">07</span> Para profissionais</p>
         <h2 id="pro-title">Para médicos, dentistas e empresas</h2>
       </div>
-      <div class="pro">
+      <div class="pro reveal-stagger">
         <article>
           <h3>Portal do Médico</h3>
           <p>Acompanhe os laudos e as imagens dos exames dos seus pacientes.</p>
@@ -534,11 +538,11 @@
   <!-- FAQ -->
   <section class="section section-alt" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="ruler"><span class="n">08</span> Dúvidas</p>
         <h2 id="faq-title">Perguntas frequentes</h2>
       </div>
-      <div class="faq">
+      <div class="faq reveal">
         <details>
           <summary>Preciso de pedido médico?</summary>
           <div class="answer">
@@ -597,7 +601,7 @@
           <li>Instagram: <span class="fill">[PREENCHER @]</span></li>
         </ul>
       </div>
-      <form class="form" id="contact-form" novalidate>
+      <form class="form reveal" data-reveal="right" id="contact-form" novalidate>
         <div class="field">
           <label for="f-nome">Seu nome</label>
           <input class="input" id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome">

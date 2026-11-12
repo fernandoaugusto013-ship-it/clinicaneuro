@@ -85,13 +85,19 @@ Complemento: **régua de corte** — numeração de seção no formato `01 / Exa
 
 ## Imagens e ícones
 
-- Somente fotos reais da clínica. Enquanto não chegarem, placeholders com fundo `--sand-100`, borda tracejada e legenda dizendo exatamente qual foto tirar (ex.: "Foto da fachada da Av. Capitão Arlindo Pacheco, 115, de dia, sem carros na frente").
+- Destino final: fotos reais da clínica.
+- Até lá, **ilustrações provisórias próprias** (SVG em `img/ilustracao-*.svg` e `img/avatar-*.svg`), no estilo flat da paleta: sala de ressonância com janela para o Sertão (mandacarus), fachadas das 3 unidades com o número em destaque, avatares de jaleco. São obviamente ilustrações. Nada de foto realista inventada da clínica ou de médicos, que poderia enganar o paciente e fere as regras de publicidade do CFM.
 - Ícones: traço de 1.75px, 24px, desenhados à mão em SVG inline, sem círculos de fundo. Usados só onde ajudam (WhatsApp, telefone, mapa, documento, resultado).
 - Imagens em WebP/AVIF com `loading="lazy"`, `width`/`height` definidos.
 
 ## Movimento
 
-Transições de 150–200ms em cor e borda; acordeão abre com altura natural. Nada de animação de entrada em rolagem. Com `prefers-reduced-motion: reduce`, todas as transições e o `scroll-behavior: smooth` são desligados.
+- Microinterações: 150–250ms em cor, borda e elevação (cartões de unidade sobem 4px e a ilustração aproxima 3% no hover).
+- **Entrada do hero:** título, texto, botões e nota sobem em sequência (0 / 120 / 220 / 320ms); a ilustração desliza da direita.
+- **Ao rolar** (IntersectionObserver, dispara uma vez): cabeçalhos de seção sobem 28px com fade; listas (exames, convênios, unidades, especialidades, equipe, portais) entram item a item com 70ms de intervalo; a régua de corte "se desenha" da esquerda para a direita; a linha do tempo cresce de cima para baixo; formulário entra pela direita.
+- **Parallax** leve das curvas de nível do hero (18% da rolagem) e anel tracejado da ressonância girando devagar (24s por volta).
+- Curva padrão `cubic-bezier(.2,.7,.2,1)`, 600–900ms.
+- Sem JS, tudo aparece normalmente. Com `prefers-reduced-motion: reduce`, nada se move: conteúdo já visível, sem parallax, sem giro, sem rolagem suave.
 
 ## Voz
 

@@ -568,6 +568,51 @@ body.has-cookie .wa-float { bottom: calc(var(--cookie-h, 0px) + 2rem); }
 .prose li { margin-bottom: var(--s-2); }
 .crumbs { font-size: var(--fs-sm); margin-bottom: var(--s-4); }
 
+main { overflow-x: clip; }
+
+/* ---------- Imagens ilustrativas ---------- */
+.hero-media { margin: 0; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--sand-300); background: var(--sand-100); }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) { .hero-media { aspect-ratio: 4 / 5; max-height: 36rem; } }
+@media (max-width: 899px) { .hero-media { aspect-ratio: 16 / 11; } .hero-media img { object-position: 50% 62%; } }
+.unit-img { width: calc(100% + 2 * var(--s-5)); max-width: none; margin: calc(-1 * var(--s-5)) calc(-1 * var(--s-5)) 0; border-radius: var(--r-md) var(--r-md) 0 0; border-bottom: 1px solid var(--sand-300); aspect-ratio: 8 / 5; object-fit: cover; }
+.unit { overflow: hidden; }
+img.avatar { width: 4rem; height: 4rem; border-radius: var(--r-sm); border: 1px solid var(--sand-300); background: var(--sand-100); }
+
+/* ---------- Animações ao rolar ----------
+   Só com JS ativo e sem preferência por menos movimento.
+   Sem JS, tudo aparece normalmente. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .intro { opacity: 0; transform: translateY(18px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0ms); }
+  .js .hero-media { opacity: 0; transform: translateX(28px) scale(.98); animation: slide-in .9s cubic-bezier(.2,.7,.2,1) .15s forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @keyframes slide-in { to { opacity: 1; transform: none; } }
+
+  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js .reveal[data-reveal="right"] { transform: translateX(32px); }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+
+  .js .reveal-stagger > * { opacity: 0; transform: translateY(22px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 70ms); }
+  .js .reveal-stagger.is-in > * { opacity: 1; transform: none; }
+  .js .reveal-stagger.settled > * { transition-delay: 0s; }
+
+  /* régua de corte "desenha" quando a seção entra */
+  .js .reveal .ruler::after { transform: scaleX(0); transform-origin: left; transition: transform .9s cubic-bezier(.2,.7,.2,1) .25s; }
+  .js .reveal.is-in .ruler::after { transform: scaleX(1); }
+
+  /* linha do tempo cresce de cima para baixo */
+  .js .timeline::before { transform: scaleY(0); transform-origin: top; transition: transform 1.4s cubic-bezier(.2,.7,.2,1) .1s; }
+  .js .timeline.is-in::before { transform: scaleY(1); }
+
+  /* curvas de nível do hero se movem devagar com a rolagem (parallax) */
+  .hero::before { transform: translate3d(0, var(--parallax, 0px), 0) rotate(calc(var(--parallax, 0px) * .04deg)); will-change: transform; }
+
+  .unit, .pro article { transition: transform .25s ease, box-shadow .25s ease, opacity .6s, border-color .25s; }
+  .unit:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #c9b99f; }
+  .unit-img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .unit:hover .unit-img { transform: scale(1.03); }
+}
+
 /* ---------- Movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
